@@ -98,21 +98,21 @@ Practice code in the book with Python.
 
 3. 若遇到應用遞迴撰寫程式時，達到 call stack 的最大允許深度，則會出現錯誤。可使用以下技巧，讓「壞」遞迴變成「好」遞迴：
     * 利用編譯器／直譯器針對「尾遞迴」的最佳化（tail-call optimization, TCO），重構原程式。
-        * 尾遞迴（tail-recursion）：遞迴呼叫發生於函式的最後，且必須是單純的遞迴呼叫，不能再進行其他的動作，例如 `return lt[cur] + sum_next(lt, cur + 1)`。
+        * 尾遞迴（tail-recursion）：遞迴呼叫發生於函式的最後，且必須是單純的遞迴呼叫，不能再進行其他的動作，例如不可為 `return lt[cur] + sum_next(lt, cur + 1)`。
 
-        ```python
-        def sum_next(lt, i):
-            if i == len(lt): return
-            sum += lt[i]
-            sum_next(lt, i+1)
-        ```
+            ```python
+            def sum_next(lt, i):
+                if i == len(lt): return
+                sum += lt[i]
+                sum_next(lt, i+1)
+            ```
 
         * 非尾遞迴
 
-        ```python
-        def fibonacci(n):
-            if n <= 0: return 0
-            return fibonacci(n-1) + fibonacci(n-2)
-        ```
+            ```python
+            def fibonacci(n):
+                if n <= 0: return 0
+                return fibonacci(n-1) + fibonacci(n-2)
+            ```
 
     * 從演算法方面著手（例如二分法），將遞迴深度控制在合理範圍內。

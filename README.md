@@ -76,9 +76,9 @@ Practice code in the book with Python.
 
     接著我們就可以將此式子逐步轉換成，只有 $k$ 在其中一側的等式：
 
-    $(\frac{n}{2^k}) = 1$
+    $\frac{n}{2^k} = 1$
 
-    $2^k * (\frac{n}{2^k}) = 2^k$
+    $2^k * \frac{n}{2^k} = 2^k$
 
     $n = 2^k$
 

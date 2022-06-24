@@ -82,12 +82,16 @@ Practice code in the book with Python.
 
     $n = 2^k$
 
-    $\log2(n) = \log2(2^k)$
+    $\log{2}(n) = \log{2}(2^k)$
 
-    $\log2(n) = k$
+    $\log{2}(n) = k$
 
     最終得：
 
-    $k = \log2(n)$
+    $k = \log{2}(n)$
+
+    又因於電腦科學中，對數習慣以 2 為底來表示，因此也可寫成：
+
+    $k = \log{2}(n) = \log(n)$
 
     即代表資料規模為 $n$ 的已排序數列，在其中尋找一數時，花費的搜尋次數為 $k$。

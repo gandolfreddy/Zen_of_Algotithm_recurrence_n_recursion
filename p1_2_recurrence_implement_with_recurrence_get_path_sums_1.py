@@ -1,5 +1,5 @@
 '''
-    Find path sums 1
+    Get path sums 1
 '''
 
 

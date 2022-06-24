@@ -1,5 +1,5 @@
 '''
-    Good recursion 1
+    Good recursion 1: tail-recursion
     However, Python does not support a tail-recursion optimization.
     see: 
         1. http://neopythonic.blogspot.com/2009/04/tail-recursion-elimination.html
@@ -21,4 +21,3 @@ if __name__ == "__main__":
     lt = [1 for _ in range(250000)]
     sum_next(lt, 0)
     print(s)
-    

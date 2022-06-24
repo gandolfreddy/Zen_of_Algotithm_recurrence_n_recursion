@@ -28,10 +28,6 @@ def get_path_sums(root):
         if cur_node.right != None:
             node_q.append(cur_node.right)
             sums[cur_node.right] = cur_sum + cur_node.right.val
-        
-        for k, v in sums.items():
-            print(k.val, v)
-        print()
 
     return sums
 

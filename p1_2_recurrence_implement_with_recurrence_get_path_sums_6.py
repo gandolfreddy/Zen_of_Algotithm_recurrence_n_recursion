@@ -45,23 +45,24 @@ def build_tree(n):
 def get_path_sums(root):
     stk = Stack()
     primer = Frame(root)
-    stk.append(primer)
+    stk.push(primer)
 
     while True:
-        top = stk[-1]
+        top = stk.peek()
         if top.node is None:
             stk.pop()
-            stk[-1].cnt += 1
+            ## 上一層 Frame 的 cnt 加 1
+            stk.peek().cnt += 1
         elif top.cnt == 0:
-            stk.append(Frame(top.node.left))
+            stk.push(Frame(top.node.left))
         elif top.cnt == 1:
-            stk.append(Frame(top.node.right))
+            stk.push(Frame(top.node.right))
         else:
             popped = stk.pop()
             if not popped.sums:
                 popped.sums.append(popped.node.val)
-            if not stk: break
-            top = stk[-1]
+            if stk.is_empty(): break
+            top = stk.peek()
             for s in popped.sums:
                 top.sums.append(s + top.node.val)
             top.cnt += 1

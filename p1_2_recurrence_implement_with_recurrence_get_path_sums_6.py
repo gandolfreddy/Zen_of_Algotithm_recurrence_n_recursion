@@ -4,6 +4,7 @@
 
 
 from p1_2_prepare_a_binary_tree import Node
+from ds_tools import Stack
 
 
 class Frame:
@@ -42,7 +43,7 @@ def build_tree(n):
 
 
 def get_path_sums(root):
-    stk = []
+    stk = Stack()
     primer = Frame(root)
     stk.append(primer)
 

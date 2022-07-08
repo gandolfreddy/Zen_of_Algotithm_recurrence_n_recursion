@@ -48,6 +48,9 @@ class Stack:
     def size(self):
         return len(self.stk)
 
+    def __iter__(self):
+        return (elem for elem in self.stk)
+
 
 class Node:
     def __init__(self, val):

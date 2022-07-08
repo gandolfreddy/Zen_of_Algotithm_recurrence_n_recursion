@@ -1,19 +1,19 @@
 '''
-    find ways out of a maze
+    find ways out of a maze 2
 '''
 
 
-from ds_tools import build_tree
+from ds_tools import build_tree, Stack
 
 
-def find_paths(node, path, paths):
-    path.append(node)
+def find_paths(node, stk, paths):
+    stk.push(node)
     if not node.left and not node.right and not 21 % node.val:
-        paths.append(path)
+        paths.append(list(stk))
     if node.left:
-        find_paths(node.left, path.copy(), paths)
+        find_paths(node.left, stk, paths)
     if node.right:
-        find_paths(node.right, path.copy(), paths)
+        find_paths(node.right, stk, paths)
 
 
 if __name__ == "__main__":

@@ -1,5 +1,5 @@
 '''
-    find ways out of a maze 2
+    find ways out of a maze 3
 '''
 
 
@@ -7,13 +7,12 @@ from ds_tools import build_tree, Stack
 
 
 def find_paths(node, stk, paths):
+    if not node: return
     stk.push(node)
     if not node.left and not node.right and not 21 % node.val:
         paths.append(list(stk))
-    if node.left:
-        find_paths(node.left, stk, paths)
-    if node.right:
-        find_paths(node.right, stk, paths)
+    find_paths(node.left, stk, paths)
+    find_paths(node.right, stk, paths)
     stk.pop()
 
 

@@ -44,27 +44,41 @@ class Stack:
 
     def __init__(self):
         self.stk = []
+        self.current_size = 0
 
     def push(self, val):
+        ''' Add an element to the top of the stack '''
         self.stk.append(val)
+        self.current_size += 1
 
     def pop(self):
+        ''' Remove an element from the top of the stack '''
+        if self.is_empty():
+            return None
+        self.current_size -= 1
         return self.stk.pop()
 
     def is_empty(self):
-        return len(self.stk) == 0
+        ''' Check if the stack is empty '''
+        return self.current_size == 0
 
     def peek(self):
+        ''' Get the element at the top of the stack '''
         return self.stk[-1]
 
     def size(self):
-        return len(self.stk)
+        ''' Get the size of the stack '''
+        return self.current_size
 
     def __iter__(self):
         return (elem for elem in self.stk)
 
 
 class Node:
+    '''
+        Build a binary tree node
+    '''
+
     def __init__(self, val):
         self.val = val
         self.left = None
@@ -72,6 +86,7 @@ class Node:
 
 
 def build_tree(lt, li, hi):
+    ''' Build a binary search tree from a sorted list '''
     if li > hi:
         return None
     mid = li + (hi - li) // 2

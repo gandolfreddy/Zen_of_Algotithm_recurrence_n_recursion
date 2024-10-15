@@ -4,19 +4,23 @@
 
 
 def sum_recurrence(lt):
+    ''' Calculate the sum of a list with recurrence '''
     s = 0
-    for i in lt: s += i
+    for i in lt:
+        s += i
     return s
 
 
 def sum_recursion(lt, cur):
-    if cur == len(lt): return 0
+    ''' Calculate the sum of a list with recursion '''
+    if cur == len(lt):
+        return 0
     return lt[cur] + sum_recursion(lt, cur+1)
 
 
 if __name__ == '__main__':
-    lt = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    sum1 = sum_recurrence(lt)
-    sum2 = sum_recursion(lt, 0)
+    test_lt = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    sum_1 = sum_recurrence(test_lt)
+    sum_2 = sum_recursion(test_lt, 0)
 
-    print(f"{sum1} and {sum2} are equal.")
+    print(f"{sum_1} and {sum_2} are equal.")

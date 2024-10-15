@@ -7,29 +7,41 @@ class Queue:
     '''
         Build a queue with the built-in list
     '''
+
     def __init__(self):
         self.q = []
+        self.current_size = 0
 
     def enqueue(self, val):
+        ''' Add an element to the end of the queue '''
         self.q.append(val)
+        self.current_size += 1
 
     def dequeue(self):
+        ''' Remove an element from the front of the queue '''
+        if self.is_empty():
+            return None
+        self.current_size -= 1
         return self.q.pop(0)
 
     def is_empty(self):
-        return len(self.q) == 0
+        ''' Check if the queue is empty '''
+        return self.current_size == 0
 
     def peek(self):
+        ''' Get the element at the front of the queue '''
         return self.q[0]
 
     def size(self):
-        return len(self.q)
+        ''' Get the size of the queue '''
+        return self.current_size
 
 
 class Stack:
     '''
         Build a stack with the built-in list
     '''
+
     def __init__(self):
         self.stk = []
 
@@ -60,7 +72,8 @@ class Node:
 
 
 def build_tree(lt, li, hi):
-    if li > hi: return None
+    if li > hi:
+        return None
     mid = li + (hi - li) // 2
     root = Node(lt[mid])
     root.left = build_tree(lt, li, mid-1)

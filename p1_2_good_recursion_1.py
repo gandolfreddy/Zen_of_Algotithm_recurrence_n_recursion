@@ -10,9 +10,11 @@ s = 0
 
 
 def sum_next(lt, i):
+    ''' Sum with recursion '''
     global s
 
-    if i == len(lt): return 0
+    if i == len(lt):
+        return 0
     s += lt[i]
     sum_next(lt, i+1)
 

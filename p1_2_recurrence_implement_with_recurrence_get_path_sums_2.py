@@ -38,10 +38,10 @@ if __name__ == "__main__":
     test_root = build_tree(lt, 0, len(lt)-1)
 
     # Binary Tree
-    # 4
-    # /   \
-    # 2     6
-    # / \   / \
+    #      4
+    #    /   \
+    #   2     6
+    #  / \   / \
     # 1   3 5   7
 
     # print the tree

@@ -42,6 +42,6 @@ if __name__ == "__main__":
     print_tree(test_root)
     print()
 
-    test_sums = list()
+    test_sums = []
     get_path_sums(test_root, 0, test_sums)
     print(test_sums)

@@ -12,9 +12,12 @@ def collect_sums(root):
     if not root:
         return sums
     for s in collect_sums(root.left):
+        print(f's: {s} + root.val: {root.val}')
         sums.append(s + root.val)
     for s in collect_sums(root.right):
+        print(f's: {s} + root.val: {root.val}')
         sums.append(s + root.val)
+    print(f'sums: {sums}')
     if not sums:
         sums.append(root.val)
     return sums
